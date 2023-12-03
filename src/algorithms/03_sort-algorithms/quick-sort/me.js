@@ -7,7 +7,9 @@
  * 
  * @param {Array<Number>} array 
  */
-function sortByLastNumber(array) {
+function quickSort(array) {
+  if (array.length < 2) return array
+
   const pivotNumberIndex = array.length - 1
   const pivotNumber = array[pivotNumberIndex]
   const smallerNumbers = []
@@ -23,19 +25,10 @@ function sortByLastNumber(array) {
     }
   }
 
-  const smallerSortedNumbers = smallerNumbers.length > 1 ? sortByLastNumber(smallerNumbers) : smallerNumbers
-  const largerSortedNumbers = largerNumbers.length > 1 ? sortByLastNumber(largerNumbers): largerNumbers
+  const smallerSortedNumbers = quickSort(smallerNumbers)
+  const largerSortedNumbers = quickSort(largerNumbers)
 
   return [...smallerSortedNumbers, pivotNumber, ...largerSortedNumbers]
-}
-/**
- * 
- * @param {Array<Number>} array 
- */
-function quickSort(array) {
-  if (array.length < 1) return []
-
-  return sortByLastNumber(array)
 }
 
 const array = [-6, 20, 8, -2, 4]
