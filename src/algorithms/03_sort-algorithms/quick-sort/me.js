@@ -3,6 +3,7 @@
 // Place everything that's smaller than the pivot into a "left" array
 // Place everything that's greater than the pivot into a "right" array
 
+// NO Space contraints
 /**
  * 
  * @param {Array<Number>} array 
